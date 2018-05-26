@@ -129,6 +129,7 @@
 
 .left-container {
     width: 240px;
+    flex-shrink: 0;
 }
 
 .top-box {
@@ -319,7 +320,6 @@
 
 .r2s-left span {
     display: inline-block;
-    height: 40px;
     text-align: center;
 }
 
@@ -341,6 +341,7 @@
     height: 40px;
     text-align: center;
     line-height: 40px;
+    padding-left: 32px;
 }
 
 .lss {
@@ -362,11 +363,12 @@
     height: 40px;
     text-align: end;
     font-size: 12px;
+    padding-left: 20px;
 }
 
 .lts {
     display: inline-block;
-    width: 662px;
+    width: 665px;
 }
 
 .r2s:hover {
@@ -374,23 +376,40 @@
 }
 
 .scroll {
+    background: white;
     width: 100%;
     height: 593px;
-    overflow-y: auto;
+    overflow-y: scroll;
+    display: flex;
 }
 .scroll-left{
-    padding-right: 16px;
-}
-.scroll-right{
-    height: 0;
-    overflow: hidden;
-    padding-right:16px;
+    flex: 1 1 auto;
 }
 
-.scroll ::-webkit-scrollbar {
-    width: 10px;
+.scroll-right {
+    flex: 0 0 10px;
+    background: white!important;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 16px;
+}
+
+.scroll::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
 .mid-container {
     flex-grow: 1;
 }
